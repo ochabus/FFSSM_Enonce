@@ -31,7 +31,7 @@ public class Moniteur extends Plongeur {
      * @return l'employeur actuel de ce moniteur sous la forme d'un Optional
      */
     public Optional<Club> employeurActuel() {
-        if(embauches.isEmpty()&& !embauches.get(embauches.size()-1).estTerminee()){
+        if(embauches.isEmpty()|| embauches.get(embauches.size()-1).estTerminee()){
              return Optional.empty();
         }else{
        return Optional.ofNullable(embauches.get(embauches.size()-1).getEmployeur());
