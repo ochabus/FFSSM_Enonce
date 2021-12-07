@@ -41,9 +41,12 @@ public class LicenceTest {
         Guillaume = new Moniteur(Guillaume, dauphin, 4, "29", "CASTILLO", "Guillaume", "avenue de toulouse", "0637937900", LocalDate.of(1977, 4, 11));
         l1 = new Licence(Guillaume, "08917", LocalDate.of(2020, 9, 26), dauphin);
     }
-        @Test 
-        public void testEstConforme(){
-        assertFalse(l1.estValide(LocalDate.of(2020, 9, 26));
-        }
 
+    @Test
+    public void testEstConforme() {
+        
+        LocalDate dateLicenceValide = LocalDate.of(2020, 12, 8);
+        assertTrue(l1.estValide(dateLicenceValide));
     }
+
+}

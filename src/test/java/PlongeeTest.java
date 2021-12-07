@@ -10,6 +10,9 @@ import FFSSM.Moniteur;
 import FFSSM.Plongee;
 import FFSSM.Plongeur;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -22,13 +25,14 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author chabus
  */
 public class PlongeeTest {
-    
+
     Licence l1;
     Moniteur Guillaume;// L'objet à tester
     Plongeur plongeur;
     Club dauphin;
     Plongee plong1;
     Embauche e1;
+    ArrayList lesPlongees;
 
     @BeforeEach
 
@@ -41,4 +45,18 @@ public class PlongeeTest {
         e1 = new Embauche(LocalDate.of(2021, 12, 7), Guillaume, dauphin);
     }
 
+    @Test
+    public void TestAjoutParticipant() {
+        lesPlongees = new ArrayList<>();
+        plong1.ajouteParticipant(plongeur);
+        lesPlongees.add(plongeur);
+        //  assertTrue(plong1.lesPlongees.contains(plongeur));
+    }
+
+    @Test
+    public void TestEstConforme() {
+        plongeur.ajouteLicence("73", LocalDate.of(2021, 5, 1), dauphin);
+        plong1.ajouteParticipant(plongeur);
+        assertTrue(plong1.estConforme());
+    }
 }

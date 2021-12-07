@@ -12,6 +12,7 @@ import FFSSM.Plongeur;
 import FFSSM.Site;
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.ArrayList;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -26,10 +27,11 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ClubTest {
   Licence l1;
     Moniteur Guillaume;
-    Plongeur plongeur;
+    Plongeur plongeur, plongeur2;
     Club dauphin;// L'objet à tester
     Plongee plong1;
     Embauche e1;
+  ArrayList lesPlongees;
 
     @BeforeEach
 
@@ -43,7 +45,19 @@ public class ClubTest {
         plong1 = new Plongee(new Site("Arcachon","bassin d'arcachon"),Guillaume, LocalDate.of(2021, 12, 5),10,4);
     }
 @Test
-public void TestPolongeeNonConformes(){
-    assertFalse(plong1.estConforme());
+public void TestPlongeeNonConformes(){
+    plongeur.ajouteLicence("89876", LocalDate.of(2021, 12, 5), dauphin);
+    plong1.ajouteParticipant(plongeur);
+    plongeur2.ajouteLicence("234", LocalDate.of(2020, 12, 5), dauphin);
+    plong1.ajouteParticipant(plongeur2);
+    
+   assertFalse(plong1.estConforme(),"Il y a une plongee non conforme");
+   
 }
+ @Test
+    public void TestOrganisePlongee(){
+        lesPlongees = new ArrayList<>();
+        dauphin.organisePlongee(plong1);
+        assertTrue(dauphin.lesPlongees.contains(plong1));
+    }
 }

@@ -13,14 +13,6 @@ public class Site
 		this.details = details;
 	}
 
-    public Site(String arcachon) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Site(String arcachon) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
 	public String getNom() {
 		return nom;
 	}

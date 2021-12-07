@@ -6,6 +6,7 @@ package FFSSM;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 public class Plongee {
@@ -52,6 +53,55 @@ public class Plongee {
             estConforme = true;
         }
         return estConforme;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 31 * hash + Objects.hashCode(this.lieu);
+        hash = 31 * hash + Objects.hashCode(this.chefDePalanquee);
+        hash = 31 * hash + Objects.hashCode(this.date);
+        hash = 31 * hash + this.profondeur;
+        hash = 31 * hash + this.duree;
+        hash = 31 * hash + Objects.hashCode(this.licence);
+        hash = 31 * hash + Objects.hashCode(this.plongee);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Plongee other = (Plongee) obj;
+        if (this.profondeur != other.profondeur) {
+            return false;
+        }
+        if (this.duree != other.duree) {
+            return false;
+        }
+        if (!Objects.equals(this.lieu, other.lieu)) {
+            return false;
+        }
+        if (!Objects.equals(this.chefDePalanquee, other.chefDePalanquee)) {
+            return false;
+        }
+        if (!Objects.equals(this.date, other.date)) {
+            return false;
+        }
+        if (!Objects.equals(this.licence, other.licence)) {
+            return false;
+        }
+        if (!Objects.equals(this.plongee, other.plongee)) {
+            return false;
+        }
+        return true;
     }
 
 }
