@@ -14,6 +14,7 @@ public class Licence {
     public LocalDate delivrance;
 
     public Club club;
+    private Licence licence;
 
     public Licence(Personne possesseur, String numero, LocalDate delivrance, Club club) {
         this.possesseur = possesseur;
@@ -39,14 +40,21 @@ public class Licence {
     }
 
     /**
-     * Est-ce que la licence est valide à la date indiquée ?
-     * Une licence est valide pendant un an à compter de sa date de délivrance
+     * Est-ce que la licence est valide à la date indiquée ? Une licence est
+     * valide pendant un an à compter de sa date de délivrance
+     *
      * @param d la date à tester
      * @return vrai si valide à la date d
-     **/
+     *
+     */
     public boolean estValide(LocalDate d) {
-         // TODO: Implémenter cette méthode
-        throw new UnsupportedOperationException("Pas encore implémenté");
+        // TODO: Implémenter cette méthode
+        boolean estValide = true;
+        if (d.isAfter(delivrance.plusYears(1))) {
+            estValide = false;
+        }
+        return estValide;
     }
-
 }
+
+

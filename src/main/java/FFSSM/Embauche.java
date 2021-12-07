@@ -11,6 +11,7 @@ public class Embauche {
     private final Moniteur employe;
 
     private final Club employeur;
+    private Embauche embauche;
 
     public Embauche(LocalDate debut, Moniteur employe, Club employeur) {
         this.debut = debut;
@@ -20,20 +21,23 @@ public class Embauche {
 
     /**
      * Termine cette embauche
+     *
      * @param dateFin la date à laquelle cette embauche est terminée
      */
     public void terminer(LocalDate dateFin) {
-         // TODO: Implémenter cette méthode
-        throw new UnsupportedOperationException("Pas encore implémenté");	    
+        //embauche.getFin();
+        fin = dateFin;
     }
-    
+
     /**
      * Est-ce que cette embauche est terminée ?
+     *
      * @return vrai si terminée, faux sinon.
      */
     public boolean estTerminee() {
         return (fin != null);
     }
+
     /**
      * Get the value of employeur
      *
@@ -79,5 +83,4 @@ public class Embauche {
         return debut;
     }
 
-    
 }
