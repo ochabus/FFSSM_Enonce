@@ -39,6 +39,7 @@ public class ClubTest {
         // Initialiser les objets utilisés dans les tests
         dauphin = new Club(Guillaume, "Les Dauphins", "0729017354");
         plongeur = new Plongeur("86", "ALBAN", "Thibault", "28 pas. hermitte", "0678452543", LocalDate.of(1990, 12, 8));
+        plongeur2 = new Plongeur("86", "DALI", "Evans", "28 pas. hermitte", "0678452543", LocalDate.of(1989, 6, 3));
         Guillaume = new Moniteur(Guillaume, dauphin, 4, "29", "CASTILLO", "Guillaume", "avenue de toulouse", "0637937900", LocalDate.of(1977, 4, 11));
         l1 = new Licence(Guillaume, "08917", LocalDate.of(2020, 9, 26), dauphin);
         e1 = new Embauche(LocalDate.of(2021, 12, 7), Guillaume, dauphin);
@@ -56,8 +57,9 @@ public void TestPlongeeNonConformes(){
 }
  @Test
     public void TestOrganisePlongee(){
-        lesPlongees = new ArrayList<>();
+        //lesPlongees = new ArrayList<>();
         dauphin.organisePlongee(plong1);
-        assertTrue(dauphin.lesPlongees.contains(plong1));
+        //assertTrue(dauphin.lesPlongees.contains(plong1));
+        assertTrue(dauphin.plongees.contains(plong1));
     }
 }
