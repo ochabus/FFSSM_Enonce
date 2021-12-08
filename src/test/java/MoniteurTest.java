@@ -49,13 +49,13 @@ public class MoniteurTest {
 
         Guillaume.nouvelleEmbauche(dauphin, LocalDate.EPOCH);
 
-        //assertEquals(Guillaume.employeurActuel(), Optional.empty());
+        assertEquals(Guillaume.employeurActuel(), Optional.empty());
         assertFalse(Guillaume.employeurActuel().isPresent());
     }
 
     @Test
     public void testNouvelleEmbauche(Club employeur, LocalDate debutNouvelle) {
-     //   assertTrue(Guillaume.nouvelleEmbauche(dauphin, debutNouvelle));
+     assertTrue(Guillaume.nouvelleEmbauche(dauphin, debutNouvelle));
     }
 
     @Test

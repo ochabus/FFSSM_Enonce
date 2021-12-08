@@ -21,7 +21,7 @@ public class Plongee {
 
     public int duree;
     private Licence licence;
-    private ArrayList<Plongeur> plongee = new ArrayList<>();
+    public ArrayList<Plongeur> plongee = new ArrayList<>();
 
     public Plongee(Site lieu, Moniteur chefDePalanquee, LocalDate date, int profondeur, int duree) {
         this.lieu = lieu;

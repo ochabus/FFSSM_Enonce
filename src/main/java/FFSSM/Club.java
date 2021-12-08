@@ -18,7 +18,7 @@ public class Club {
 
     public String telephone;
     private Set<Plongee> Mplongees = new HashSet<>();
-    private ArrayList<Plongee> plongees = new ArrayList<>();
+    public ArrayList<Plongee> plongees = new ArrayList<>();
 
     public Club(Moniteur président, String nom, String telephone) {
         this.president = président;

@@ -9,6 +9,7 @@ import FFSSM.Licence;
 import FFSSM.Moniteur;
 import FFSSM.Plongee;
 import FFSSM.Plongeur;
+import FFSSM.Site;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -43,6 +44,7 @@ public class PlongeeTest {
         Guillaume = new Moniteur(Guillaume, dauphin, 4, "29", "CASTILLO", "Guillaume", "avenue de toulouse", "0637937900", LocalDate.of(1977, 4, 11));
         l1 = new Licence(Guillaume, "08917", LocalDate.of(2020, 9, 26), dauphin);
         e1 = new Embauche(LocalDate.of(2021, 12, 7), Guillaume, dauphin);
+        plong1 = new Plongee(new Site("Arcachon", "bassin d'arcachon"), Guillaume, LocalDate.of(2021, 12, 5), 10, 4);
     }
 
     @Test
@@ -50,7 +52,7 @@ public class PlongeeTest {
         lesPlongees = new ArrayList<>();
         plong1.ajouteParticipant(plongeur);
         lesPlongees.add(plongeur);
-        //  assertTrue(plong1.lesPlongees.contains(plongeur));
+        assertTrue(plong1.plongee.contains(plongeur));
     }
 
     @Test
